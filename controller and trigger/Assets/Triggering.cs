@@ -16,8 +16,13 @@ public class Triggering : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider other) { 
-        Renderer render = GetComponent<Renderer>();
+        
+        if (other.CompareTag("Player"))
+        {
+            Renderer render = GetComponent<Renderer>();
         render.material.color = Color.red;
         Debug.Log(other.gameObject.name);
+        }
     }
+
 }
